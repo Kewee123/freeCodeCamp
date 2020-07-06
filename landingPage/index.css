@@ -1,0 +1,28 @@
+.nav-link{
+    color: yellowgreen;
+}
+
+.nav-link:hover{
+    color: blue;
+}
+
+#nav-bar{
+    position:fixed;
+    top:0px;
+    background-color: black;
+    width:100%;
+    font-size: 25px;
+}
+.heading{
+    display:flex;
+    flex-direction: column;
+}
+.heading-img{
+    width:50%;
+}
+
+@media(max-width:200px){
+    .heading{
+        font-size: 20px;
+    }
+}
