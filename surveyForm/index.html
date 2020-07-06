@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <title>Survey Form</title>
+</head>
+<body>
+    <main id="main">
+        <h1 id="title"> Information Form </h1>
+        <p id="description">
+            This is a quick survey to get to know you!
+        </p>
+        <form id="survey-form">
+            <label for="name" id="name-label">Enter your name
+                <input id="name" placeholder="John Do" required/>
+            </label>
+            <br>
+            <label for="email" id="email-label"> Enter your email
+                <input type="email" id="email" placeholder="potato@gmail.com" required/>
+            </label>
+            <br>
+            <label for="number" id="number-label"> Favorite number between 1 and 10
+                <input type="number" id="number" min=1 max=10 placeholder="1"/>           
+            </label>
+            <br>
+            <label for="dropdown" >Choose a car:</label>
+            <select name="dropdown" id="dropdown">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </select>
+
+            <p>Please select your age:</p>
+            <input type="radio" id="age1" name="age" value="30">
+            <label for="age1">0 - 30</label><br>
+            <input type="radio" id="age2" name="age" value="60">
+            <label for="age2">31 - 60</label><br>  
+            <input type="radio" id="age3" name="age" value="100">
+            <label for="age3">61 - 100</label><br><br>
+
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+            <label for="vehicle1"> I have a bike</label><br>
+            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+            <label for="vehicle2"> I have a car</label><br>
+            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+            <label for="vehicle3"> I have a boat</label><br><br>
+
+            <label for="comments">Enter your comments</label>
+            <textarea id="comments" name="comments"></textarea>
+            <br>
+            <button type="submit" id="submit">Submit</button>
+        </form>
+    </main>
+</body>
+</html>
