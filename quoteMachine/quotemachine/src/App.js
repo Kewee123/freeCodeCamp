@@ -16,7 +16,7 @@ function App() {
             <img src={logo} className="App-logo" alt="logo" />
             <p>
                 Counter <code>{counter}</code> and save to reload.
-                <button onClick={() => dispatch(increment())}>+</button>
+                <button onClick={() => dispatch(increment(5))}>+</button>
                 <button onClick={() => dispatch(decrement())}>-</button>
                 {isLogged && <h3>Valuable Info</h3>}
             </p>
