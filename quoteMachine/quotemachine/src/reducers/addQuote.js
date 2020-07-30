@@ -1,7 +1,10 @@
 const addQuoteReducer = (state={}, action) => {
     switch(action.type){
         case 'ADD_QUOTE':
-            return {"quote": state.quote, "author": state.author};
+            return (Object.assign({}, state, {
+                author: action.author,
+                quote: action.quote
+            }));
         default:
             return state;
     }

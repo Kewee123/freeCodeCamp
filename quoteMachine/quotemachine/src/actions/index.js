@@ -11,8 +11,10 @@ export const decrement = () => {
     };
 }
 
-export const add_quote = () =>{
+export const add_quote = (author, quote) =>{
     return {
         type: 'ADD_QUOTE',
+        author: author,
+        quote, quote
     };
 }
