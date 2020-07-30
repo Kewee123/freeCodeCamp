@@ -15,6 +15,6 @@ export const add_quote = (author, quote) =>{
     return {
         type: 'ADD_QUOTE',
         author: author,
-        quote, quote
+        quote: quote
     };
 }
