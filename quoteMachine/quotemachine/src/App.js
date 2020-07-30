@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {useSelector, useDispatch} from 'react-redux';
-import {increment, decrement} from './actions';
+import {increment, decrement, add_quote} from './actions';
 
 
 function App() {
@@ -19,6 +19,7 @@ function App() {
                 <button onClick={() => dispatch(increment(5))}>+</button>
                 <button onClick={() => dispatch(decrement())}>-</button>
                 {isLogged && <h3>Valuable Info</h3>}
+                {dispatch(add_quote())}
             </p>
             <a
             className="App-link"

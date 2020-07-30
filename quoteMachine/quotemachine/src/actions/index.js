@@ -10,3 +10,9 @@ export const decrement = () => {
         type: 'DECREMENT'
     };
 }
+
+export const add_quote = () =>{
+    return {
+        type: 'ADD_QUOTE',
+    };
+}
