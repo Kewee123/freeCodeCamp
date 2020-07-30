@@ -52,15 +52,4 @@ import { connect } from 'react-redux';
 }
 
 
-function mapStateToProps(state){
-    return {
-        author: state.author,
-        quote: state.quote
-    }
-}
-
-const mapDispatchToProps = {
-    add_quote
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(addQuote);
+export default connect()(addQuote);
