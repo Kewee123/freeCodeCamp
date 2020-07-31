@@ -49,7 +49,8 @@ function mapDispatchToProps(dispatch) {
                         <input type="text" name="quote" onChange={this.onChange}/>
                      </div>
                      
-                    <button>Submit</button>
+                    <button>Add Quote</button>
+                    <button>Remove Quote</button>
                 </form>
             </div>
         );

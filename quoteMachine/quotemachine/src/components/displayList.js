@@ -10,7 +10,7 @@ const mapStateToProps = state => {
 const DisplayList = ({ quotes }) => (
     <div>
         {quotes.map(item => {
-            return <li key={item.author}>{item.author}:{item.quote}</li>
+            return <li key={item.author}>{item.author}: "{item.quote}"</li>
         })}
     </div>
 );
