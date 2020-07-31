@@ -1,5 +1,5 @@
 const initialState = {
-    quotes: [],
+    quotes: [{"quote":"This is not the Jedi Way", "author": "Anakin Skywalker"}],
 }
 
 const addQuoteReducer = (state=initialState, action) => {
