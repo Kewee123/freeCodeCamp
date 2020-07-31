@@ -3,6 +3,11 @@ import {useSelector, useDispatch} from 'react-redux';
 import {increment, decrement, add_quote} from './actions';
 import { connect } from 'react-redux';
 
+function mapDispatchToProps(dispatch) {
+    return {
+      add_quote: (author, quote) => dispatch(add_quote(author,quote))
+    };
+  }
  class addQuote extends Component {
     
     constructor(props) {
@@ -27,7 +32,7 @@ import { connect } from 'react-redux';
     handleSubmit(event){
         event.preventDefault();
 
-        this.props.useDispatch(add_quote(this.state.author, this.state.quote));
+        this.props.add_quote(this.state.author,this.state.quote);
         
     }
     
@@ -52,4 +57,4 @@ import { connect } from 'react-redux';
 }
 
 
-export default connect()(addQuote);
+export default connect(null, mapDispatchToProps)(addQuote);
