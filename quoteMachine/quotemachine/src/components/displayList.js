@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => {
-    return { quotes: state.quotes };
+    console.log("this me", state);
+    console.log(state.addQuote.quotes);
+    return { quotes : state.addQuote.quotes};
 };
 
 const DisplayList = ({ quotes }) => (
