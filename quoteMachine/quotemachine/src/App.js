@@ -3,8 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import {useSelector, useDispatch} from 'react-redux';
 import {increment, decrement, add_quote} from './actions';
-import AddQuote from './addQuote';
-
+import AddQuote from './components/addQuote';
+import DisplayList from './components/displayList';
 
 function App() {
     const counter = useSelector(state => state.counter);
@@ -16,11 +16,12 @@ function App() {
         <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <p>
-                Counter <code>{counter}</code> and save to reload.
+                Counter <code>{counter}</code>
                 <button onClick={() => dispatch(increment(5))}>+</button>
                 <button onClick={() => dispatch(decrement())}>-</button>
                 {isLogged && <h3>Valuable Info</h3>}
             </p>
+            <DisplayList/>
             <AddQuote/> 
         </header>
      

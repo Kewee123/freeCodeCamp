@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {increment, decrement, add_quote} from './actions';
+import {increment, decrement, add_quote} from '../actions';
 import { connect } from 'react-redux';
-import store from './store';
 
 function mapDispatchToProps(dispatch) {
     return {
