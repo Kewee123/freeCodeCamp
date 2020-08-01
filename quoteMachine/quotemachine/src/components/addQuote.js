@@ -32,6 +32,7 @@ function mapDispatchToProps(dispatch) {
 
     handleSubmit(event){
         event.preventDefault();
+        console.log("potaotota", event.target)
         if(event.target.id == "remove_quote"){
             this.props.remove_quote(this.state.author,this.state.quote);
         } else{
@@ -42,7 +43,7 @@ function mapDispatchToProps(dispatch) {
     render() {
         return (
             <div>
-                 <form onSubmit={this.handleSubmit}>
+                 <form onSub>
                      <div>
                         <label>Author</label>
                         <input type="text" name="author" onChange={this.onChange}/>
@@ -52,8 +53,8 @@ function mapDispatchToProps(dispatch) {
                         <input type="text" name="quote" onChange={this.onChange}/>
                      </div>
                      
-                    <button id="add_quote">Add Quote</button>
-                    <button id="remove_quote">Remove Quote</button>
+                    <button id="add_quote" onClick={this.handleSubmit}>Add Quote</button>
+                    <button id="remove_quote" onClick={this.handleSubmit}>Remove Quote</button>
                 </form>
             </div>
         );
