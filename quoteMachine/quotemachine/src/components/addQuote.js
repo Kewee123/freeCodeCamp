@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {increment, decrement, add_quote} from '../actions';
+import {increment, decrement, add_quote, remove_quote} from '../actions';
 import { connect } from 'react-redux';
 
 function mapDispatchToProps(dispatch) {
     return {
-      add_quote: (author, quote) => dispatch(add_quote(author,quote))
+      add_quote: (author, quote) => dispatch(add_quote(author,quote)),
+      remove_quote: (author, quote) => dispatch(remove_quote(author, quote))
     };
   }
  class addQuote extends Component {
@@ -31,9 +32,11 @@ function mapDispatchToProps(dispatch) {
 
     handleSubmit(event){
         event.preventDefault();
-
-        this.props.add_quote(this.state.author,this.state.quote);
-        
+        if(event.target.id == "remove_quote"){
+            this.props.remove_quote(this.state.author,this.state.quote);
+        } else{
+            this.props.add_quote(this.state.author,this.state.quote);
+        }
     }
     
     render() {
@@ -49,8 +52,8 @@ function mapDispatchToProps(dispatch) {
                         <input type="text" name="quote" onChange={this.onChange}/>
                      </div>
                      
-                    <button>Add Quote</button>
-                    <button>Remove Quote</button>
+                    <button id="add_quote">Add Quote</button>
+                    <button id="remove_quote">Remove Quote</button>
                 </form>
             </div>
         );

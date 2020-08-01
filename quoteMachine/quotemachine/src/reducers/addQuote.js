@@ -8,6 +8,12 @@ const addQuoteReducer = (state=initialState, action) => {
             return (Object.assign({}, state, {
                 quotes: state.quotes.concat({"quote": action.quote, "author": action.author})
             }));
+        case 'REMOVE_QUOTE':
+            return (Object.assign({}, state, {
+                quotes: state.quotes.filter(item=> {
+                    return(item.quote !== action.quote)
+                })
+            }))
         default:
             return state;
     }

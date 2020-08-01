@@ -18,3 +18,11 @@ export const add_quote = (author, quote) =>{
         quote: quote
     };
 }
+
+export const remove_quote = (author, quote) =>{
+    return{
+        type: 'REMOVE_QUOTE',
+        author: author,
+        quote: quote
+    };
+}

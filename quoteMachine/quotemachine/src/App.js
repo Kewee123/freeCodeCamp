@@ -24,7 +24,6 @@ function App() {
             <DisplayList/>
             <AddQuote/> 
         </header>
-     
         </div>
     );
 }
