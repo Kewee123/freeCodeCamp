@@ -26,3 +26,9 @@ export const remove_quote = (author, quote) =>{
         quote: quote
     };
 }
+
+export const fetch_quotes = () =>{
+    return{
+        type: 'FETCH_QUOTES',
+    };
+}
