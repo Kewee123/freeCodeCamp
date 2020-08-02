@@ -13,13 +13,15 @@ const store = createStore(
 
 
 store.dispatch((dispatch)=>{
-    dispatch(fetch_quotes())
-    axios.get("http://swquotesapi.digitaljedi.dk/api/SWQuote/RandomStarWarsQuote")
-    .then((response)=>{
-        dispatch(receive_quote(response))
-    })
-    .catch((err)=>{
-        dispatch(fetch_quote_error(err))
-    })
+    for(let i = 0; i < 100; i++){
+        dispatch(fetch_quotes())
+        axios.get("http://swquotesapi.digitaljedi.dk/api/SWQuote/RandomStarWarsQuote")
+        .then((response)=>{
+            dispatch(receive_quote(response))
+        })
+        .catch((err)=>{
+            dispatch(fetch_quote_error(err))
+        })
+    }
 })
 export default store;

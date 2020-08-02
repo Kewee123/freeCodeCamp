@@ -22,7 +22,7 @@ const addQuoteReducer = (state=initialState, action) => {
             break;
         }
         case 'RECEIVE_QUOTE': {
-            return {...state, fetching: false, fetched: true, quote: action.quote}
+            return {...state, fetching: false, fetched: true, quote: state.quote.concat(action.quote)}
             break;
         }
         case 'FETCH_QUOTE_ERROR' :{
