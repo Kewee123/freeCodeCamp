@@ -18,12 +18,15 @@ const addQuoteReducer = (state=initialState, action) => {
                 })
             }));
         case 'FETCH_QUOTE': {
+            return {...state, fetching:true}
             break;
         }
         case 'RECEIVE_QUOTE': {
+            return {...state, fetching: false, fetched: true, quote: action.quote}
             break;
         }
-        case 'FETCH_QUOTE_ERROR'{
+        case 'FETCH_QUOTE_ERROR' :{
+            return {...state, fetching:false, error: action.quote}
             break;
         }
         default:
