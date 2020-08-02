@@ -33,7 +33,7 @@ export const fetch_quotes = () =>{
     };
 }
 
-export const receive_quote = (response) =>{
+export const fetch_quotes_fulfilled = (response) =>{
     return{
         type: "RECEIVE_QUOTE", 
         quote: response.data

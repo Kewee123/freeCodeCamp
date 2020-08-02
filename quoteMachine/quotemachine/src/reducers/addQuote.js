@@ -17,16 +17,16 @@ const addQuoteReducer = (state=initialState, action) => {
                     return(item.quote !== action.quote)
                 })
             }));
-        case 'FETCH_QUOTE': {
+        case 'FETCH_QUOTE_PENDING': {
             return {...state, fetching:true}
             break;
         }
-        case 'RECEIVE_QUOTE': {
-            return {...state, fetching: false, fetched: true, quote: state.quote.concat(action.quote)}
+        case 'FETCH_QUOTE_FULFILLED': {
+            return {...state, fetching: false, fetched: true, quote: state.quote.concat(action.payload.data)}
             break;
         }
-        case 'FETCH_QUOTE_ERROR' :{
-            return {...state, fetching:false, error: action.quote}
+        case 'FETCH_QUOTE_REJECTED' :{
+            return {...state, fetching:false, error: action.payload}
             break;
         }
         default:
