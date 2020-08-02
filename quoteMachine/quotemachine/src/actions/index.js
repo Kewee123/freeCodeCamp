@@ -32,3 +32,17 @@ export const fetch_quotes = () =>{
         type: 'FETCH_QUOTES',
     };
 }
+
+export const receive_quote = (response) =>{
+    return{
+        type: "RECEIVE_QUOTE", 
+        quote: response.data
+    };
+}
+
+export const fetch_quote_error = (err) =>{
+    return{
+        type: "FETCH_QUOTE_ERROR", 
+        quote: err
+    };
+}
