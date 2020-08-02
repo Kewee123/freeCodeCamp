@@ -23,7 +23,7 @@ const requests = () =>{
 
 store.dispatch({
     type: "FETCH_QUOTE",
-    payload: Promise.all(requests())
+    payload: Promise.all(requests()).then(values=> values)
 })
 
 export default store;

@@ -22,7 +22,21 @@ const addQuoteReducer = (state=initialState, action) => {
             break;
         }
         case 'FETCH_QUOTE_FULFILLED': {
-            return {...state, fetching: false, fetched: true, quote: state.quote.concat(action.payload.data)}
+            console.log(action)
+            let quote = [];
+
+            action.payload.forEach((item) => {
+                quote.push(item.data);
+            });
+
+            console.log(quote);
+
+            return {
+                ...state, 
+                fetching: false, 
+                fetched: true, 
+                quote: state.quote.concat(quote)
+            }
             break;
         }
         case 'FETCH_QUOTE_REJECTED' :{
