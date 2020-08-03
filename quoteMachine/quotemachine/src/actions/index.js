@@ -27,6 +27,12 @@ export const remove_quote = (author, quote) =>{
     };
 }
 
+export const random_quote = () =>{
+    return{
+        type: 'RANDOM_QUOTE'
+    };
+}
+
 export const fetch_quotes = () =>{
     return{
         type: 'FETCH_QUOTES',

@@ -17,6 +17,8 @@ const addQuoteReducer = (state=initialState, action) => {
                     return(item.quote !== action.quote)
                 })
             }));
+        case 'RANDOM_QUOTE':
+            return {...state};
         case 'FETCH_QUOTE_PENDING': {
             return {...state, fetching:true}
             break;
