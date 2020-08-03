@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import {random_quote} from '../actions/';
+import logo from '../logo.svg';
+
 
 const mapStateToProps = state => {
     console.log("yo", state)
@@ -45,9 +47,10 @@ class DisplayQuote extends Component {
         console.log("displayQuote state"+ this.state.retrieveQuote);
         return (
             <div>
-                {fetched && this.state.retrieveQuote}
-                <br/>
-                <button id="random_quote" onClick={this.handleSubmit}>Random Quote</button>
+                {!fetched &&  <img src={logo} className="App-logo" alt="logo" />}
+                    {fetched && this.state.retrieveQuote}
+                    <br/>
+                    {fetched && <button id="random_quote" onClick={this.handleSubmit}>Random Quote</button>}
              </div>
         )
     }
