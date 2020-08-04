@@ -15,7 +15,6 @@ function App() {
     return (
         <div className="App">
             <title>Star Wars Quote Generator</title>
-            
             <header className="App-header">
                 <h1 id="title">Star Wars Quote Generator</h1>
                 <DisplayQuote/> 
