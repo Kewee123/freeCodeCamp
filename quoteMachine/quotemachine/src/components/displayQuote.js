@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Button from '@material-ui/core/Button';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 
 const mapStateToProps = state => {
@@ -47,7 +48,7 @@ class DisplayQuote extends Component {
         console.log("displayQuote state"+ this.state.retrieveQuote);
         return (
             <div id="quote-box">
-                {!fetched &&  <FontAwesomeIcon icon={["fas", "spinner"]} />}
+                {!fetched &&  <CircularProgress />}
                     <div id="text">{fetched && this.state.retrieveQuote}</div>
                     <br/>
                     {fetched && <Button variant="contained" color="primary" id="random_quote" onClick={this.handleSubmit}>Random Quote</Button>}
