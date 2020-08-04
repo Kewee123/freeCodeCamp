@@ -15,7 +15,7 @@ const store = createStore(
 
 const requests = () =>{
     let requestsArray = []
-    for(let i = 0; i < 100; i++){
+    for(let i = 0; i < 25; i++){
         requestsArray.push(axios.get("http://swquotesapi.digitaljedi.dk/api/SWQuote/RandomStarWarsQuote"))
     }
     return requestsArray;

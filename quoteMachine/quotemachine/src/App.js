@@ -15,15 +15,7 @@ function App() {
     return (
         <div className="App">
         <header className="App-header">
-            <p>
-                Counter <code>{counter}</code>
-                <button onClick={() => dispatch(increment(5))}>+</button>
-                <button onClick={() => dispatch(decrement())}>-</button>
-                {isLogged && <h3>Valuable Info</h3>}
-            </p>
-            <DisplayQuote/>
-            <DisplayList/>
-            <AddQuote/> 
+            <DisplayQuote/> 
         </header>
         </div>
     );
