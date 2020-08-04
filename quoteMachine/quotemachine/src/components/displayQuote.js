@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import {random_quote} from '../actions/';
-import logo from '../logo.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Button from '@material-ui/core/Button';
 
 
 const mapStateToProps = state => {
@@ -47,11 +46,11 @@ class DisplayQuote extends Component {
         const {quote, fetched} = this.props;
         console.log("displayQuote state"+ this.state.retrieveQuote);
         return (
-            <div>
-                {!fetched &&  <FontAwesomeIcon icon={["fas", "coffee"]} />}
-                    {fetched && this.state.retrieveQuote}
+            <div id="quote-box">
+                {!fetched &&  <FontAwesomeIcon icon={["fas", "spinner"]} />}
+                    <div id="text">{fetched && this.state.retrieveQuote}</div>
                     <br/>
-                    {fetched && <button id="random_quote" onClick={this.handleSubmit}>Random Quote</button>}
+                    {fetched && <Button variant="contained" color="primary" id="random_quote" onClick={this.handleSubmit}>Random Quote</Button>}
              </div>
         )
     }
